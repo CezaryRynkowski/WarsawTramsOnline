@@ -2,4 +2,5 @@
 <resources>
     <string name="Hello">Pobierz jsona</string>
     <string name="ApplicationName">WarsawTramsOnline</string>
+    <string name="google_maps_key">AIzaSyAcTuuB99i5b5kX0OqrA8i9qRfzhosvLmA</string>
 </resources>

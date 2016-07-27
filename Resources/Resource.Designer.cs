@@ -331,9 +331,6 @@ namespace WarsawTramsOnline
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07000d
-			public const int MyButton = 2131165197;
-			
 			// aapt resource value: 0x7f070005
 			public const int adjust_height = 2131165189;
 			
@@ -355,6 +352,9 @@ namespace WarsawTramsOnline
 			// aapt resource value: 0x7f07000c
 			public const int light = 2131165196;
 			
+			// aapt resource value: 0x7f07000d
+			public const int map = 2131165197;
+			
 			// aapt resource value: 0x7f070001
 			public const int none = 2131165185;
 			
@@ -369,9 +369,6 @@ namespace WarsawTramsOnline
 			
 			// aapt resource value: 0x7f070004
 			public const int terrain = 2131165188;
-			
-			// aapt resource value: 0x7f07000e
-			public const int textView1 = 2131165198;
 			
 			// aapt resource value: 0x7f070009
 			public const int wide = 2131165193;
@@ -519,6 +516,9 @@ namespace WarsawTramsOnline
 			
 			// aapt resource value: 0x7f04001e
 			public const int common_signin_button_text_long = 2130968606;
+			
+			// aapt resource value: 0x7f040021
+			public const int google_maps_key = 2130968609;
 			
 			static String()
 			{
