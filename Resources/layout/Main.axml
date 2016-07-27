@@ -2,12 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-<Button  
-    android:id="@+id/MyButton"
-    android:layout_width="match_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/Hello"
-    />
+    android:layout_height="match_parent">
+  <Button
+      android:id="@+id/MyButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/Hello" />
+  <TextView
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="550.0dp"
+      android:scrollbars="vertical"
+      android:scrollbarAlwaysDrawVerticalTrack="true"
+      android:id="@+id/textView1"
+      android:layout_marginBottom="539.0dp" />
 </LinearLayout>
