@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Json;
 using System.Net;
 using Android.App;
@@ -8,25 +9,50 @@ using Android.Gms.Maps.Model;
 using Android.Support.V4.App;
 using WarsawTramsOnline.Models;
 using System.Net.Http;
+using Android.Content.Res;
+using Android.Support.V4.Widget;
+using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 
 namespace WarsawTramsOnline
 {
-    [Activity(Label = "WarsawTramsOnline", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.NoActionBar.Fullscreen")]
+    [Activity(Label = "WarsawTramsOnline", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/CustomActionBarTheme")]
     public class MainActivity : FragmentActivity, IOnMapReadyCallback
     {
         private GoogleMap mMap;
         private TramsApiResult mLastApiResult;
         private string url = @"https://api.um.warszawa.pl/api/action/wsstore_get/?id=c7238cfe-8b1f-4c38-bb4a-de386db7e776&apikey=f1712a99-0dad-42e1-9f12-c660438bd769";
 
+        private DrawerLayout mDrawerLayout;
+        List<string> mLeftItems = new List<string>();
+        private ArrayAdapter mLeftAdapter;
+        private ListView mLeftDrawer;
+        private ActionBarDrawerToggle mDrawerToogle;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
 
-            var btnRefresh = FindViewById<Button>(Resource.Id.btnRefreshTrams);
 
+            mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.myDrawer);
+            mLeftDrawer = FindViewById<ListView>(Resource.Id.leftListView);
+
+            mLeftItems.Add("Główna mapa");
+            mLeftItems.Add("Wyszukaj");
+
+            mLeftAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, mLeftItems);
+            mLeftDrawer.Adapter = mLeftAdapter;
+
+            mDrawerToogle = new MyActionBarDrawerToggle(this, mDrawerLayout, Resource.Drawable.navs_icon, Resource.String.open_drawer, Resource.String.close_drawer);
+
+            mDrawerLayout.SetDrawerListener(mDrawerToogle);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetHomeButtonEnabled(true);
+            ActionBar.SetDisplayShowTitleEnabled(true);
+
+            var btnRefresh = FindViewById<Button>(Resource.Id.refresh);
             btnRefresh.Click += (sender, ea) =>
             {
                 RefreshTrams();
@@ -35,6 +61,33 @@ namespace WarsawTramsOnline
             var mapFragment = (SupportMapFragment)SupportFragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
 
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.action_bar, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        protected override void OnPostCreate(Bundle savedInstanceState)
+        {
+            base.OnPostCreate(savedInstanceState);
+            mDrawerToogle.SyncState();
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (mDrawerToogle.OnOptionsItemSelected(item))
+            {
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
+
+        public override void OnConfigurationChanged(Configuration newConfig)
+        {
+            base.OnConfigurationChanged(newConfig);
+            mDrawerToogle.OnConfigurationChanged(newConfig);
         }
 
         private void RefreshTrams()

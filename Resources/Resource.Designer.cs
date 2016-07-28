@@ -316,7 +316,13 @@ namespace WarsawTramsOnline
 			public const int common_plus_signin_btn_text_light_pressed = 2130837545;
 			
 			// aapt resource value: 0x7f02002a
-			public const int Icon = 2130837546;
+			public const int ic_action_refresh = 2130837546;
+			
+			// aapt resource value: 0x7f02002b
+			public const int Icon = 2130837547;
+			
+			// aapt resource value: 0x7f02002c
+			public const int navs_icon = 2130837548;
 			
 			static Drawable()
 			{
@@ -331,53 +337,59 @@ namespace WarsawTramsOnline
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070005
-			public const int adjust_height = 2131165189;
+			// aapt resource value: 0x7f090005
+			public const int adjust_height = 2131296261;
 			
-			// aapt resource value: 0x7f070006
-			public const int adjust_width = 2131165190;
+			// aapt resource value: 0x7f090006
+			public const int adjust_width = 2131296262;
 			
-			// aapt resource value: 0x7f07000a
-			public const int auto = 2131165194;
+			// aapt resource value: 0x7f09000a
+			public const int auto = 2131296266;
 			
-			// aapt resource value: 0x7f07000f
-			public const int btnRefreshTrams = 2131165199;
+			// aapt resource value: 0x7f09000b
+			public const int dark = 2131296267;
 			
-			// aapt resource value: 0x7f07000b
-			public const int dark = 2131165195;
+			// aapt resource value: 0x7f09000e
+			public const int fram_map = 2131296270;
 			
-			// aapt resource value: 0x7f07000d
-			public const int fram_map = 2131165197;
+			// aapt resource value: 0x7f090000
+			public const int hybrid = 2131296256;
 			
-			// aapt resource value: 0x7f070000
-			public const int hybrid = 2131165184;
+			// aapt resource value: 0x7f090007
+			public const int icon_only = 2131296263;
 			
-			// aapt resource value: 0x7f070007
-			public const int icon_only = 2131165191;
+			// aapt resource value: 0x7f090010
+			public const int leftListView = 2131296272;
 			
-			// aapt resource value: 0x7f07000c
-			public const int light = 2131165196;
+			// aapt resource value: 0x7f09000c
+			public const int light = 2131296268;
 			
-			// aapt resource value: 0x7f07000e
-			public const int map = 2131165198;
+			// aapt resource value: 0x7f09000f
+			public const int map = 2131296271;
 			
-			// aapt resource value: 0x7f070001
-			public const int none = 2131165185;
+			// aapt resource value: 0x7f09000d
+			public const int myDrawer = 2131296269;
 			
-			// aapt resource value: 0x7f070002
-			public const int normal = 2131165186;
+			// aapt resource value: 0x7f090001
+			public const int none = 2131296257;
 			
-			// aapt resource value: 0x7f070003
-			public const int satellite = 2131165187;
+			// aapt resource value: 0x7f090002
+			public const int normal = 2131296258;
 			
-			// aapt resource value: 0x7f070008
-			public const int standard = 2131165192;
+			// aapt resource value: 0x7f090011
+			public const int refresh = 2131296273;
 			
-			// aapt resource value: 0x7f070004
-			public const int terrain = 2131165188;
+			// aapt resource value: 0x7f090003
+			public const int satellite = 2131296259;
 			
-			// aapt resource value: 0x7f070009
-			public const int wide = 2131165193;
+			// aapt resource value: 0x7f090008
+			public const int standard = 2131296264;
+			
+			// aapt resource value: 0x7f090004
+			public const int terrain = 2131296260;
+			
+			// aapt resource value: 0x7f090009
+			public const int wide = 2131296265;
 			
 			static Id()
 			{
@@ -421,6 +433,22 @@ namespace WarsawTramsOnline
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f080000
+			public const int action_bar = 2131230720;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
@@ -435,6 +463,9 @@ namespace WarsawTramsOnline
 			
 			// aapt resource value: 0x7f040000
 			public const int auth_google_play_services_client_google_display_name = 2130968576;
+			
+			// aapt resource value: 0x7f040023
+			public const int close_drawer = 2130968611;
 			
 			// aapt resource value: 0x7f040018
 			public const int common_google_play_services_api_unavailable_text = 2130968600;
@@ -526,12 +557,34 @@ namespace WarsawTramsOnline
 			// aapt resource value: 0x7f040021
 			public const int google_maps_key = 2130968609;
 			
+			// aapt resource value: 0x7f040022
+			public const int open_drawer = 2130968610;
+			
 			static String()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int CustomActionBarTheme = 2131165184;
+			
+			// aapt resource value: 0x7f070001
+			public const int MyActionBar = 2131165185;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
